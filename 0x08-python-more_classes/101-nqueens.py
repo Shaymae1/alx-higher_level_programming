@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" defines a nqueens"""
+"""Solves the N-queens puzzle"""
 
 import sys
 
