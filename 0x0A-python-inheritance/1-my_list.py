@@ -1,9 +1,15 @@
 #!/usr/bin/python3
-"""Module containing the ``MyList`` class definition."""
+"""
+contains the MyList class
+"""
 
 
 class MyList(list):
-    """``MyList`` class definition."""
+    """a subclass of list"""
+    def __init__(self):
+        """initializes the object"""
+        super().__init__()
+
     def print_sorted(self):
-        """prints out the content of the list in a sorted order."""
+        """prints the sorted list"""
         print(sorted(self))
