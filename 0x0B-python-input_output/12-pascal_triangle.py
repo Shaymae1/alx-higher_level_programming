@@ -1,24 +1,24 @@
 #!/usr/bin/python3
-"""
-Defines pasacal triangle that create list of lists
-"""
+"""Pascal's Triangle"""
 
 
 def pascal_triangle(n):
-    """
-    defines triangle module
+    """Represent Pascal's Triangle of size n.
+
+    Return:
+        a list of lists of integers representing
+        the triangle.
+
     """
     if n <= 0:
         return []
-    temp = []
-    l = []
-    for i in range(n):
-        row = []
-        for j in range(i + 1):
-            if i == 0 or j == 0 or i == j:
-                row.append(1)
-            else:
-                row.append(l[j] + l[j - 1])
-        l = row
-        temp.append(row)
-    return temp
+
+    triangles = [[1]]
+    while len(triangles) != n:
+        tri = triangles[-1]
+        tmp = [1]
+        for i in range(len(tri) - 1):
+            tmp.append(tri[i] + tri[i + 1])
+        tmp.append(1)
+        triangles.append(tmp)
+    return triangles
